@@ -1,0 +1,62 @@
+<html>
+
+    <head>
+        <title> Filter Me! </title>
+        <meta charset="UTF-8">
+        <meta name="description" content="An image processing tool as a chrome extension">
+        <meta name="keywords" content="chrome extension image processing filtering jpeg png">
+        <meta name="author" content="Konstantinos Kostis">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+        <link rel="icon" type="image/png" href="./src/images/image_processor.png">
+
+        <link rel="stylesheet" type="text/css" href="src/css/main.css" />
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Filter Me</h1>
+            <h2>An intuitive image processing tool</h2>
+
+            <img src="src/images/image_processor.png" width="150" height="150">
+        </div>
+
+        <div class="original-image-wrapper image-wrapper">
+            <div class="original-image-controls">
+                <div class="input-group">
+                    <input type="file" class="form-control" id="choose-image" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept="image/png, image/jpeg">
+                    <button class="btn btn-outline-primary" type="button" id="upload-original">Upload</button>
+                </div>
+            </div>
+
+            <div class="image-text"> Original Image </div>
+            <div class="original-image-container image-container red-border"></div>
+        </div>
+
+        <div class="image-processing-panel">
+            <div class="image-processing-controls">
+                <div class="image-processing-panel-child">
+                    <select class="form-select js-filter-select" aria-label="Default select example">
+                        <option value="duplicate" selected>Duplicate</option>
+                        <option value="grayscale">Grayscale</option>
+                        <option value="reflect">Reflect</option>
+                        <option value="sepia">Sepia</option>
+                    </select>
+                </div>
+    
+                <div class="filter-apply image-processing-panel-child">
+                    <button class="btn btn-outline-primary" type="button" id="apply-filter">Apply</button>
+                </div>
+            </div>
+
+            <div class="image-text"> Processed Image </div>
+            <div class="processed-image-container image-container green-border"></div>
+        </div>
+
+        <script src="src/js/main.js" type="module"></script>
+    </body>
+
+</html>
